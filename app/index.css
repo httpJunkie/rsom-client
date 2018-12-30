@@ -1,0 +1,45 @@
+body {
+  background-color: #1B2634;
+  font-family: Lato;
+  color: rgb(151, 243, 255, 0.9);
+}
+h1, p {
+  font-family: Lato;
+}
+
+ul {
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+
+.Todos {
+  padding: 1em;
+}
+
+.clearance-level {
+  margin-right: 0.5em;
+}
+
+.languages {
+  display: flex;
+  justify-content: center;
+}
+
+.languages li {
+  margin: 10px;
+  font-weight: bold;
+  font-size: 1.25em;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container-item {
+  flex-grow: 1;
+}
