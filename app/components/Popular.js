@@ -12,18 +12,20 @@ class Popular extends React.Component {
   }
 
   componentDidMount() {
-    api.fetchPopularRepos(this.state.selectedLanguage)
-      .then(function (repos) {
-        console.log(repos);
-      })
+    this.updateLanguage(this.state.selectedLanguage);
   }
 
   updateLanguage(lang) {
-    this.setState(function () {
+    this.setState(() => {
       return {
-        selectedLanguage: lang
+        selectedLanguage: lang,
+        repos: null
       }
     });
+    api.fetchPopularRepos(lang)
+      .then((repos) => {
+        console.log(repos)
+      });
   }
   render() {
     return (
