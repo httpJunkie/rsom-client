@@ -12,7 +12,7 @@ export default () => {
   const [todos, dispatch] = useImmerReducer(todosReducer, []);
 
   return (
-    <div className="Todos">
+    <div className="todos">
       <Form dispatch={dispatch} />
       <div>
         {todos.map(({ text, complete }, i) => (
