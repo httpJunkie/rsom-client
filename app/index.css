@@ -108,3 +108,8 @@ li {
 .button:active {
   transform: translateY(1px);
 }
+
+.four-o-four {
+ color: white;
+ text-align: center;
+}
