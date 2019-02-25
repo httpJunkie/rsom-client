@@ -125,6 +125,14 @@ li {
   justify-content: center;
 }
 
+.popular-list ul li a {
+  color: white;
+  background: black;
+  display: block;
+  outline: 1px rgba(100, 200, 100, 0.5) solid;
+  padding: 16px;
+}
+
 .column input {
   border-radius: 3px;
   margin: 10px 0;

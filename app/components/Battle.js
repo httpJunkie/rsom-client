@@ -5,20 +5,18 @@ class Battle extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playerOneName: '',
-      playerTwoName: '',
-      playerOneImage: null,
-      playerTwoImage: null
+      playerOneName: '', playerOneImage: null,
+      playerTwoName: '', playerTwoImage: null
     }
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(id, username) {
     this.setState(function() {
       var newState = {};
+      let url = 'https://github.com/', imageType = 'png', size = '200';
       newState[id + 'Name'] = username;
-      newState[id + 'Image'] = 'https://github.com/' + username + '.png?size=200';
+      newState[id + 'Image'] = url + username + imageType +'.?size=' + size;
       return newState;
     });
   }
@@ -38,6 +36,8 @@ class Battle extends React.Component {
 
 export default Battle;
 
+// Component(s) Only Used In Battle Component
+
 class PlayerInput extends React.Component {
   constructor(props) {
     super(props);
@@ -56,6 +56,7 @@ class PlayerInput extends React.Component {
       }
     })
   }
+
   handleSubmit(event) {
     event.preventDefault();
     this.props.onSubmit(this.props.id, this.state.username);
@@ -67,7 +68,12 @@ class PlayerInput extends React.Component {
         <label className='header' htmlFor='username'>
           {this.props.label}
         </label>
-        <input id='username' placeholder='github username' type="text" autoComplete='off' value={this.state.username} onChange={this.handleChange} />
+        <input 
+          id='username'
+          placeholder='github username'
+          type="text" autoComplete='off'
+          value={this.state.username} onChange={this.handleChange}
+          />
         <button className='button' type='submit' disabled={!this.state.username}>
           Submit
         </button>
