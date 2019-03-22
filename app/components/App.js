@@ -12,19 +12,21 @@ class App extends React.Component {
       <BrowserRouter>
         <div className="app-container">
           <Nav />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/battle" component={Battle} />
-            <Route path="/popular" render={(props) =>
-              <>
-                <Popular />
-                <Iconic />
-              </>
-            } />
-            <Route render={() => {
-              return <h2 className="four-o-four">404 Page Not Found</h2>
-            }}/>
-          </Switch>
+          <div className="content">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/battle" component={Battle} />
+              <Route path="/popular" render={(props) =>
+                <>
+                  <Popular />
+                  <Iconic />
+                </>
+              } />
+              <Route render={() => {
+                return <h2 className="four-o-four">404 Page Not Found</h2>
+              }} />
+            </Switch>
+          </div>
         </div>
       </BrowserRouter>
     )

@@ -49,13 +49,19 @@ li {
   text-align: center;
 }
 
-.nav {
+
+.content, .nav {
+  padding: 1em;
+}
+.nav ul {
+  margin: 0;
+
   display: flex;
 }
-.nav > li {
+.nav ul > li {
   margin-right: 15px; 
 }
-.nav > li > a {
+.nav ul > li > a {
   color: rgb(151, 243, 255, 0.9);
 }
 .active {
